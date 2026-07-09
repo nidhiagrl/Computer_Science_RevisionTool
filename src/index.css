@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Premium Light Mode Overrides mapping dark slate variables to clean light ones */
+.light-mode {
+  --color-slate-950: #f8fafc; /* Beautiful off-white canvas bg */
+  --color-slate-900: #ffffff; /* Crisp white card bg */
+  --color-slate-850: #f1f5f9; /* Soft light gray tabs/controls */
+  --color-slate-800: #e2e8f0; /* Soft light divider borders */
+  --color-slate-700: #cbd5e1; /* Subtle hover borders */
+  --color-slate-600: #94a3b8; /* Secondary icons/bullets */
+  --color-slate-500: #64748b; /* Decent muted texts */
+  --color-slate-400: #334155; /* Body copy readability */
+  --color-slate-300: #1e293b; /* Highly readable secondary headings */
+  --color-slate-200: #0f172a; /* Ultra-crisp primary text */
+  --color-slate-100: #020617; /* Master titles */
+
+  /* Readability overrides for Indigo links/accents in Light Mode */
+  --color-indigo-400: #4f46e5; /* indigo-600 */
+  --color-indigo-300: #3730a3; /* indigo-800 */
+  --color-indigo-200: #1e1b4b; /* indigo-950 */
+  --color-indigo-100: #0f172a; /* Deep contrast dark text */
+  
+  /* Highlight blocks and matching cards */
+  --color-emerald-400: #16a34a; /* emerald-600 */
+  --color-emerald-950: #e8f5e9; /* Light green container for matches */
+  
+  --color-red-500: #dc2626; /* red-600 */
+  --color-red-200: #7f1d1d; /* Deep red text for mismatch */
+  --color-red-950: #fef2f2; /* Light red container for mismatches */
+
+  /* Selection adjustments */
+  --color-indigo-950: #e0e7ff; /* light indigo background for selected lists */
+  --color-indigo-900: #c7d2fe; /* light indigo selected hover state */
+  --color-emerald-900: #d1fae5;
+}
+
+/* Perspective utilities for authentic 3D card flips */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Custom Scrollbar and utility class to hide scrollbar */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.05);
+}
+
+.light-mode ::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.02);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.5);
+}
+
+/* Shake animation for mismatch errors */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+
+.animate-shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+/* Fade in for congratulations modal */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+

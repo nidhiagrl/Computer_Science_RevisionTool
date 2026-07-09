@@ -1,0 +1,6 @@
+{
+  "name": "Revision Quest",
+  "description": "An interactive, educational matching game designed to help users master Data Structures & Algorithms (DSA), API Response Codes, and interview problem approaches.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
